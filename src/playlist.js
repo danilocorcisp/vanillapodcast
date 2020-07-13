@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import Search from "./search";
 import APIClient from "./APIClient";
 import { connect } from "react-redux";
-import actions from "../../actions";
+import actions from "./podcastActions";
 import APlayer from "aplayer";
 
 class Playlist extends Component {
     constructor() {
         super();
         this.state = {
-            //			trackList: null,
             player: null,
         };
     }
@@ -39,30 +38,7 @@ class Playlist extends Component {
             music: sublist,
         });
 
-        // ap1.on('play', function () {
-        //     console.log('play');
-        // });
-        // ap1.on('play', function () {
-        //     console.log('play play');
-        // });
-        // ap1.on('pause', function () {
-        //     console.log('pause');
-        // });
-        // ap1.on('canplay', function () {
-        //     console.log('canplay');
-        // });
-        // ap1.on('playing', function () {
-        //     console.log('playing');
-        // });
-        // ap1.on('ended', function () {
-        //     console.log('ended');
-        // });
-        // ap1.on('error', function () {
-        //     console.log('error');
-        // });
-
         this.setState({
-            //        	trackList: list,
             player: ap1,
         });
     }
@@ -75,7 +51,6 @@ class Playlist extends Component {
 
         APIClient.get(endpoint, null)
             .then((response) => {
-                //			console.log(JSON.stringify(response))
                 this.props.podcastsReceived(response.results);
             })
             .catch((err) => {
@@ -95,13 +70,11 @@ class Playlist extends Component {
         if (feedUrl == null) return;
 
         if (this.props.podcasts.trackList != null) {
-            // tracks are already loaded
             if (this.state.player == null)
                 this.initializePlayer(this.props.podcasts.trackList);
             return;
         }
 
-        // RESET THE PLAYER:
         if (this.state.player != null) {
             this.state.player.pause();
             this.setState({
