@@ -1,3 +1,5 @@
+import React from "react";
+import axios from "./axios";
 import constants from "./constants";
 
 export default {
@@ -19,10 +21,18 @@ export default {
         };
     },
 
-    trackListReady: (list) => {
-        return {
-            type: constants.TRACKLIST_READY,
-            list: list,
-        };
-    },
+    // trackListReady: (list) => {
+    //     return {
+    //         type: constants.TRACKLIST_READY,
+    //         list: list,
+    //     };
+    // },
 };
+
+export async function trackListReady(list) {
+    console.log("trackListReady -> list", list);
+    return {
+        type: constants.TRACKLIST_READY,
+        list: list,
+    };
+}

@@ -2,54 +2,37 @@ import React from "react";
 import axios from "./axios";
 import constants from "./constants";
 
-export async function friendRelation() {
-    try {
-        const friends = await axios.get("/friends-relation");
+export default {
+    searchPodcasts: (params) => {
+        console.log("searchPodcasts: " + JSON.stringify(params));
+    },
+
+    podcastsReceived: (podcasts) => {
         return {
-            type: "GET_FRIENDS",
-            friends: friends.data,
+            type: constants.PODCASTS_RECEIVED,
+            podcasts: podcasts,
         };
-    } catch (err) {
-        console.log(err);
-    }
-}
+    },
 
-export async function acceptFriendRequest(id) {
-    try {
-        await axios.post(`/accept-friends-request/${id}`);
+    podcastSelected: (podcast) => {
         return {
-            type: "ACCEPT_REQUEST",
-            id,
+            type: constants.PODCAST_SELECTED,
+            podcast: podcast,
         };
-    } catch (err) {
-        console.log(err);
-    }
-}
+    },
 
-export async function deleteFriend(id) {
-    try {
-        await axios.post(`/delete-friend/${id}`);
+    trackListReady: (list) => {
         return {
-            type: "DELETE",
-            id,
+            type: constants.TRACKLIST_READY,
+            list: list,
         };
-    } catch (err) {
-        console.log(err);
-    }
-}
+    },
+};
 
-export async function sendMessages(messages) {
-    console.log("messages in action: ", messages);
-    return {
-        type: "LAST_MESSAGES",
-        messages,
-    };
-}
-
-export async function sendNewMessage(message) {
-    console.log("sendNewMessage -> message", message);
-    return {
-        type: "CHAT_MESSAGE",
-        message,
-    };
-}
+// export async function trackListReady(list) {
+//     console.log("trackListReady -> list", list);
+//     return {
+//         type: constants.TRACKLIST_READY,
+//         list: list,
+//     };
+// }

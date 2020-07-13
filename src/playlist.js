@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Search from "./search";
 import APIClient from "./APIClient";
 import { connect } from "react-redux";
-import actions from "./podcastActions";
+import actions from "./actions";
 import APlayer from "aplayer";
 
 class Playlist extends Component {
@@ -20,7 +20,6 @@ class Playlist extends Component {
     initializePlayer(list) {
         let sublist = [];
         if (list.length > 3) {
-            // limit list size to 3
             for (var i = 0; i < 3; i++) {
                 sublist.push(list[i]);
             }
@@ -67,7 +66,6 @@ class Playlist extends Component {
         );
         if (this.props.podcasts.selected == null) return;
 
-        // grab the feed url, then make request for rss feed
         const feedUrl = this.props.podcasts.selected["feedUrl"];
         if (feedUrl == null) return;
 
@@ -134,7 +132,7 @@ class Playlist extends Component {
     }
 }
 
-const stateToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         podcasts: state.podcast,
     };
@@ -148,4 +146,4 @@ const dispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(stateToProps, dispatchToProps)(Playlist);
+export default connect(mapStateToProps, dispatchToProps)(Playlist);

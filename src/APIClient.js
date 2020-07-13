@@ -15,6 +15,7 @@ export default {
                     }
 
                     resolve(response.body);
+                    console.log("response.body", response.body);
                 });
         });
     },

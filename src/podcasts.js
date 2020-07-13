@@ -6,7 +6,7 @@ class Podcasts extends Component {
     constructor(props) {
         console.log("Podcasts -> constructor -> props", props);
         super(props);
-        this.state = {};
+        // this.state = {};
     }
     selectPodcast(podcast, event) {
         console.log("Select Podcast: " + JSON.stringify(podcast));
@@ -14,7 +14,12 @@ class Podcasts extends Component {
     }
 
     render() {
-        const list = this.props.podcasts.all || [];
+        let list = this.props.podcasts.all || [];
+
+        // let list = "";
+        // if (this.props.podcasts) {
+        //     list = this.props.podcasts.all;
+        // }
 
         return (
             <div>
@@ -46,6 +51,7 @@ class Podcasts extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log("mapStateToProps -> state", state);
     return {
         podcasts: state.podcast,
     };

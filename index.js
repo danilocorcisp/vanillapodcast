@@ -276,8 +276,7 @@ app.get("/search/:term", function (req, res, next) {
             });
         });
 });
-app.get("/search", function (req, res, next) {
-    //	var term = req.params.term
+app.get("/feed", function (req, res, next) {
     const url = req.query.url;
     if (url == null) {
         res.json({
@@ -301,11 +300,12 @@ app.get("/search", function (req, res, next) {
                 return;
             }
 
-            var xml = response.text;
+            let xml = response.text;
+            console.log("xml", xml);
 
             xml2js.parseString(xml, function (err, result) {
-                var rss = result.rss;
-                var channel = rss.channel;
+                let rss = result.rss;
+                let channel = rss.channel;
                 if (channel.length > 0) channel = channel[0];
 
                 res.json({
@@ -313,8 +313,6 @@ app.get("/search", function (req, res, next) {
                     podcast: channel,
                 });
             });
-
-            // res.send(response.text)
         });
 });
 

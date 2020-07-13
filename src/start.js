@@ -3,20 +3,23 @@ import ReactDOM from "react-dom";
 import Logo from "./logo";
 import Welcome from "./welcome";
 import App from "./app";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import reduxPromise from "redux-promise";
 import { composeWithDevTools } from "redux-devtools-extension";
-import reducer from "./reducer";
-import podcastReducer from "./podcastReducer";
+import reducer from "./reducer_";
+import { podcastReducer } from "./reducer";
 import * as io from "socket.io-client";
 import { init } from "./socket";
 
 io.connect();
 
+const reducers = combineReducers({
+    podcast: podcastReducer,
+});
+
 const store = createStore(
-    reducer,
-    podcastReducer,
+    reducers,
     composeWithDevTools(applyMiddleware(reduxPromise))
 );
 
