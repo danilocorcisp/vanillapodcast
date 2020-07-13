@@ -13,10 +13,10 @@ class Podcasts extends Component {
 
         return (
             <div>
-                {list.map((podcast, i) => {
+                {list.map((podcast, index) => {
                     return (
                         <div
-                            key={i}
+                            key={index}
                             className="shop-banner animated fadeinup delay-2"
                         >
                             <a
