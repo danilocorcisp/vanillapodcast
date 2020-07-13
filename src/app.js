@@ -5,10 +5,11 @@ import axios from "./axios";
 import ProfilePic from "./profile-pic";
 import Uploader from "./uploader";
 import Profile from "./profile";
+import Featured from "./Featured";
 import OtherProfile from "./otherprofile";
 import { BrowserRouter, Route } from "react-router-dom";
 import Find from "./find";
-import Darkmode from "darkmode-js";
+
 import Friends from "./friendship";
 import Chat from "./chat";
 
@@ -60,10 +61,13 @@ export default class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <div>
-                    <div>
+                <div className="app-container">
+                    <div className="header">
                         <Logo />
-                        <div>
+                        {/* <div className="signed">
+                            Signed in as: {this.state.first} {this.state.last}
+                        </div> */}
+                        <div className="profpic">
                             <ProfilePic
                                 first={this.state.first}
                                 last={this.state.last}
@@ -73,7 +77,7 @@ export default class App extends React.Component {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="app">
                         <Route
                             exact
                             path="/"
@@ -94,7 +98,7 @@ export default class App extends React.Component {
                         />
 
                         <Route
-                            path="/podcast/:id"
+                            path="/user/:id"
                             render={(props) => (
                                 <OtherProfile
                                     key={props.match.url}
@@ -104,7 +108,9 @@ export default class App extends React.Component {
                             )}
                         />
 
-                        <Route path="/hottest" render={() => <Hottest />} />
+                        <Route path="/featured" render={() => <Featured />} />
+                        <Route path="/friends" render={() => <Friends />} />
+                        <Route path="/chat" component={Chat} />
 
                         {this.state.uploaderIsVisible && (
                             <Uploader
@@ -114,7 +120,9 @@ export default class App extends React.Component {
                             />
                         )}
                     </div>
-                    <footer></footer>
+                    <footer>
+                        <Navbar />
+                    </footer>
                 </div>
             </BrowserRouter>
         );

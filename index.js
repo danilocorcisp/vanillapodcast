@@ -21,6 +21,7 @@ if (process.env.PORT) {
 } else {
     secrets = require("./secrets.json");
 }
+const superagent = require("superagent");
 
 // MIDDLEWARES
 
@@ -46,6 +47,14 @@ app.use(compression());
 
 app.use(express.json());
 
+const cookieSessionMiddleware = cookieSession({
+    secret: secrets.key,
+    maxAge: 1000 * 60 * 60 * 24 * 90,
+    cookie: {
+        sameSite: true,
+    },
+});
+
 app.use(cookieSessionMiddleware);
 io.use(function (socket, next) {
     cookieSessionMiddleware(socket.request, socket.request.res, next);
@@ -64,6 +73,7 @@ const secretCode = cryptoRandomString({
 });
 
 app.use(express.static("public"));
+// app.use("/search", search);
 
 if (process.env.NODE_ENV != "production") {
     app.use(
@@ -235,6 +245,35 @@ app.get("/user/:id.json", async (req, res) => {
             res.json({ error: "Nothing here!" });
         }
     }
+});
+
+app.get("/search/:term", function (req, res, next) {
+    const term = req.params.term;
+
+    // request for ITunes
+    const url = "http://itunes.apple.com/search";
+
+    superagent
+        .get(url)
+        .query({ media: "podcast", term: term })
+        .set("Accept", "application/json")
+        .end(function (err, response) {
+            if (err) {
+                res.json({
+                    confirmation: "fail",
+                    message: err,
+                });
+                return;
+            }
+
+            // console.log(JSON.stringify(response));
+
+            let data = JSON.parse(response.text);
+            res.json({
+                confirmation: "success",
+                results: data.results,
+            });
+        });
 });
 
 app.get("/welcome", (req, res) => {

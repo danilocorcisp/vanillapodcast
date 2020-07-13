@@ -10,11 +10,7 @@ class Logo extends React.Component {
         return (
             <>
                 {/* <h1 className="title">Welcome to Timão Network!</h1> */}
-                <img
-                    className="logo"
-                    src="/img/logo.jpg"
-                    alt="Corinthians meu amor"
-                />
+                <img className="logo" src="/img/logo.png" alt="OVRCast" />
             </>
         );
     }

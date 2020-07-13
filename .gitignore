@@ -3,4 +3,4 @@ node_modules
 secrets.json
 drop.js
 extras
-
+/public/theme/
