@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+
 import { connect } from "react-redux";
-import actions from "./actions";
+import actions from "./podcastActions";
 
 class Podcasts extends Component {
     selectPodcast(podcast, event) {
@@ -52,4 +53,4 @@ const dispatchToProps = (dipatch) => {
     };
 };
 
-export default connect(stateToProps, dispatchToProps)(Podcasts);
+export default Podcasts;

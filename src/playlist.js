@@ -173,4 +173,4 @@ const dispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(stateToProps, dispatchToProps)(Playlist);
+export default Playlist;

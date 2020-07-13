@@ -22,6 +22,7 @@ if (process.env.PORT) {
     secrets = require("./secrets.json");
 }
 const superagent = require("superagent");
+const xml2js = require("xml2js");
 
 // MIDDLEWARES
 
@@ -273,6 +274,47 @@ app.get("/search/:term", function (req, res, next) {
                 confirmation: "success",
                 results: data.results,
             });
+        });
+});
+router.get("/search", function (req, res, next) {
+    //	var term = req.params.term
+    var url = req.query.url;
+    if (url == null) {
+        res.json({
+            confirmation: "fail",
+            message: "Missing Feed Url",
+        });
+
+        return;
+    }
+
+    superagent
+        .get(url)
+        .query(null)
+        .end(function (err, response) {
+            if (err) {
+                res.json({
+                    confirmation: "fail",
+                    message: err,
+                });
+
+                return;
+            }
+
+            var xml = response.text;
+
+            xml2js.parseString(xml, function (err, result) {
+                var rss = result.rss;
+                var channel = rss.channel;
+                if (channel.length > 0) channel = channel[0];
+
+                res.json({
+                    confirmation: "success",
+                    podcast: channel,
+                });
+            });
+
+            // res.send(response.text)
         });
 });
 
