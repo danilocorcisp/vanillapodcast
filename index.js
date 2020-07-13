@@ -276,9 +276,9 @@ app.get("/search/:term", function (req, res, next) {
             });
         });
 });
-router.get("/search", function (req, res, next) {
+app.get("/search", function (req, res, next) {
     //	var term = req.params.term
-    var url = req.query.url;
+    const url = req.query.url;
     if (url == null) {
         res.json({
             confirmation: "fail",
