@@ -1,7 +1,7 @@
 import superagent from "superagent";
-import bluebird from "bluebird";
+import reduxPromise from "redux-promise";
 
-module.exports = {
+export default {
     get: (endpoint, params) => {
         return new Promise((resolve, reject) => {
             superagent

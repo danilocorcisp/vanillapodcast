@@ -5,7 +5,6 @@ import actions from "./podcastActions";
 
 class Podcasts extends Component {
     selectPodcast(podcast, event) {
-        //		console.log('Select Podcast: '+JSON.stringify(podcast))
         this.props.podcastSelected(podcast);
     }
 
