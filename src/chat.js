@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 export default function Chat() {
     const elemRef = useRef();
     const messages = useSelector((state) => state && state.messages);
-    console.log("Chat -> messages", messages);
+    // console.log("Chat -> messages", messages);
     // this will be undefined for you right now!!
     // console.log('here are my last 10 chat messages: ', chatMessages);
 

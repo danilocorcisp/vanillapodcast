@@ -1,10 +1,15 @@
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
 import actions from "./podcastActions";
 
 class Podcasts extends Component {
+    constructor(props) {
+        console.log("Podcasts -> constructor -> props", props);
+        super(props);
+        this.state = {};
+    }
     selectPodcast(podcast, event) {
+        console.log("Select Podcast: " + JSON.stringify(podcast));
         this.props.podcastSelected(podcast);
     }
 
@@ -13,10 +18,10 @@ class Podcasts extends Component {
 
         return (
             <div>
-                {list.map((podcast, index) => {
+                {list.map((podcast, i) => {
                     return (
                         <div
-                            key={index}
+                            key={i}
                             className="shop-banner animated fadeinup delay-2"
                         >
                             <a
@@ -40,7 +45,7 @@ class Podcasts extends Component {
     }
 }
 
-const stateToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         podcasts: state.podcast,
     };
@@ -53,4 +58,4 @@ const dispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(stateToProps, dispatchToProps)(Podcasts);
+export default connect(mapStateToProps, dispatchToProps)(Podcasts);

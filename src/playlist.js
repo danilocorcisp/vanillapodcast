@@ -6,14 +6,16 @@ import actions from "./podcastActions";
 import APlayer from "aplayer";
 
 class Playlist extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             player: null,
         };
     }
 
-    componentDidMount() {}
+    componentDidMount() {
+        console.log("Playlist mounted!");
+    }
 
     initializePlayer(list) {
         let sublist = [];

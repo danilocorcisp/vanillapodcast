@@ -33,7 +33,7 @@ export default function reducer(state = {}, action) {
         });
     }
 
-    console.log("state LAST_MESSAGES:", state);
+    // console.log("state LAST_MESSAGES:", state);
 
     if (action.type == "CHAT_MESSAGE") {
         return (state = {
@@ -42,7 +42,7 @@ export default function reducer(state = {}, action) {
         });
     }
 
-    console.log("state after CHAT_MESSAGE:", state);
+    // console.log("state after CHAT_MESSAGE:", state);
 
     return state;
 }

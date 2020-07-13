@@ -63,17 +63,17 @@ export default class App extends React.Component {
             <BrowserRouter>
                 <div className="app-container">
                     <div className="header">
-                        <Logo />
+                        {/* <Logo /> */}
                         {/* <div className="signed">
                             Signed in as: {this.state.first} {this.state.last}
                         </div> */}
                         <div className="profpic">
-                            <ProfilePic
+                            {/* <ProfilePic
                                 first={this.state.first}
                                 last={this.state.last}
                                 image={this.state.image}
                                 toggleModal={() => this.toggleModal()}
-                            />
+                            /> */}
                         </div>
                     </div>
 
