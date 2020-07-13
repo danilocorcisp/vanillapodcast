@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import reduxPromise from "redux-promise";
 import { composeWithDevTools } from "redux-devtools-extension";
 import reducer from "./reducer";
+import podcastReducer from "./podcastReducer";
 import * as io from "socket.io-client";
 import { init } from "./socket";
 
@@ -15,6 +16,7 @@ io.connect();
 
 const store = createStore(
     reducer,
+    podcastReducer,
     composeWithDevTools(applyMiddleware(reduxPromise))
 );
 

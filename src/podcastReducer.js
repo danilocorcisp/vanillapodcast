@@ -1,12 +1,12 @@
 import constants from "./constants";
 
-var initialState = {
+const initialState = {
     all: null,
     selected: null,
     trackList: null,
 };
 
-export default (state = initialState, action) => {
+export default function podcastReducer (state = initialState, action) => {
     let updated = Object.assign({}, state);
 
     switch (action.type) {

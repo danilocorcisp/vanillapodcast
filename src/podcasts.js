@@ -47,10 +47,11 @@ const stateToProps = (state) => {
     };
 };
 
-const dispatchToProps = (dipatch) => {
+const dispatchToProps = (dispatch) => {
     return {
-        podcastSelected: (podcast) => dipatch(actions.podcastSelected(podcast)),
+        podcastSelected: (podcast) =>
+            dispatch(actions.podcastSelected(podcast)),
     };
 };
 
-export default Podcasts;
+export default connect(stateToProps, dispatchToProps)(Podcasts);
