@@ -253,7 +253,7 @@ video.responsive-video {
     height: auto;
     width: 100%;
 }
-/* Backgrounds */
+
 .gradient-bg {
     background: -webkit-linear-gradient(135deg, #bcd861, #16becf);
     background: linear-gradient(135deg, #bcd861, #16becf);
