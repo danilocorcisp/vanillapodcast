@@ -17,7 +17,7 @@ export default (props) => {
                     <ul className="full-menu collapsible">
                         <li>
                             <a href="/" className="no-child">
-                                My profile
+                                My podcasts
                             </a>
                         </li>
                         <li>

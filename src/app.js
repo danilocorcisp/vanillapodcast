@@ -1,12 +1,10 @@
 import React from "react";
-import Logo from "./logo";
-import Navbar from "./navbar";
+import Nav from "./nav";
 import axios from "./axios";
-import ProfilePic from "./profile-pic";
 import Uploader from "./uploader";
 import Profile from "./profile";
 import Featured from "./Featured";
-import OtherProfile from "./otherprofile";
+
 import { BrowserRouter, Route } from "react-router-dom";
 import Find from "./find";
 
@@ -92,12 +90,12 @@ export default class App extends React.Component {
                                     }
                                     toggleModal={() => this.toggleModal()}
                                     updatePic={(image) => this.updatePic(image)}
-                                    showBio={(bio) => this.showBio(bio)}
+                                    // showBio={(bio) => this.showBio(bio)}
                                 />
                             )}
                         />
 
-                        <Route
+                        {/* <Route
                             path="/user/:id"
                             render={(props) => (
                                 <OtherProfile
@@ -106,11 +104,9 @@ export default class App extends React.Component {
                                     history={props.history}
                                 />
                             )}
-                        />
+                        /> */}
 
                         <Route path="/featured" render={() => <Featured />} />
-                        <Route path="/friends" render={() => <Friends />} />
-                        <Route path="/chat" component={Chat} />
 
                         {this.state.uploaderIsVisible && (
                             <Uploader
@@ -121,7 +117,7 @@ export default class App extends React.Component {
                         )}
                     </div>
                     <footer>
-                        <Navbar />
+                        <Nav />
                     </footer>
                 </div>
             </BrowserRouter>
