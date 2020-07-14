@@ -118,11 +118,7 @@ class Playlist extends Component {
                     className="hero-header bg-pod animated fadeindown"
                 >
                     <div className="p-20 animated fadeinup delay-1">
-                        <div
-                            style={{ background: "#fff" }}
-                            id="player1"
-                            className="aplayer"
-                        ></div>
+                        <div id="player1" className="aplayer"></div>
                     </div>
                 </div>
 

@@ -18,6 +18,16 @@ body {
     overflow-x: hidden;
 }
 
+.bigpic img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+.register {
+    color: white;
+    font-weight: 600;
+}
+
 h1,
 h2,
 h3,
@@ -268,7 +278,7 @@ video.responsive-video {
     background: url(../img/3.jpg) no-repeat center / cover;
 }
 .bg-4 {
-    background: url(../img/logo.png) no-repeat center / cover;
+    background: url(../img/logo.jpg) no-repeat center;
 }
 .bg-5 {
     background: url(../img/5.jpg) no-repeat center / cover;
@@ -298,7 +308,7 @@ video.responsive-video {
     background: url(../img/blur.jpg) no-repeat center / cover;
 }
 .bg-pod {
-    background: url() no-repeat center / cover;
+    background: url(../img/logo.jpg) no-repeat center / cover;
 }
 
 .opacity-overlay {
@@ -531,7 +541,7 @@ footer.page-footer .footer-copyright {
     left: 20px;
     margin: 0;
 }
-/* Toolbar */
+
 #toolbar {
     width: 100%;
     height: 56px;

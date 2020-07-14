@@ -77,6 +77,14 @@ class Login extends Component {
                                     Login
                                 </button>
                             </div>
+                            <div className="flex-col-c">
+                                <p>
+                                    <Link to="/reset">
+                                        Change your password
+                                    </Link>
+                                    .
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
