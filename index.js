@@ -302,7 +302,6 @@ app.get("/feed", function (req, res, next) {
 
             let xml = response.text;
             console.log("xml", xml);
-            console.log("teste da home: ", response);
 
             xml2js.parseString(xml, function (err, result) {
                 let rss = result.rss;

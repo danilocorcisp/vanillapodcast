@@ -41,31 +41,33 @@ class Login extends Component {
     }
     render() {
         return (
-            <div className="login">
-                <div className="container-login">
-                    {this.state.error && (
-                        <div>Something went wrong. Please try again.</div>
-                    )}
-                    <div className="wrap-login">
-                        <form className="login-form">
-                            <span className="login-form-title">Login</span>
-                            <input
-                                className="input"
-                                required
-                                name="email"
-                                type="email"
-                                placeholder="Email"
-                                onChange={(e) => this.handleChange(e)}
-                            />
-                            <span className="focus-input"></span>
-                            <input
-                                className="input"
-                                required
-                                name="password"
-                                type="password"
-                                placeholder="Password"
-                                onChange={(e) => this.handleChange(e)}
-                            />
+            <div className="main animated fadein">
+                <div className="fullscreen bg-4 valign-wrapper animated fadeinright">
+                    <div className="opacity-overlay"></div>
+                    <div className="valign center-align w-100">
+                        <h1 className="m-0 white-text">
+                            <strong>OVRCast</strong>
+                        </h1>
+                        <h5 className="white-text">Login</h5>
+                        <div className="p-20">
+                            <div className="input-field with-bg center">
+                                <input
+                                    className="rounded validate"
+                                    id="login"
+                                    type="email"
+                                    onChange={(e) => this.handleChange(e)}
+                                ></input>
+                                <label htmlFor="login">Email</label>
+                            </div>
+                            <div className="input-field with-bg center">
+                                <input
+                                    className="rounded validate"
+                                    id="login-psw"
+                                    type="password"
+                                    onChange={(e) => this.handleChange(e)}
+                                ></input>
+                                <label htmlFor="login-psw">Password</label>
+                            </div>
                             <span className="focus-input"></span>
                             <div className="container-login-form-btn">
                                 <button
@@ -75,11 +77,6 @@ class Login extends Component {
                                     Login
                                 </button>
                             </div>
-                        </form>
-                        <div className="flex-col-c">
-                            <p>
-                                <Link to="/reset">Change your password</Link>.
-                            </p>
                         </div>
                     </div>
                 </div>
