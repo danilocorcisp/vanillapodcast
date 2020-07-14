@@ -1,7 +1,7 @@
 import React from "react";
 import Uploader from "./uploader";
 import ProfilePic from "./profile-pic";
-import BioEditor from "./bio-editor";
+// import BioEditor from "./bio-editor";
 
 export default function Profile(props) {
     return (
@@ -23,13 +23,13 @@ export default function Profile(props) {
             )} */}
             </div>
 
-            <div className="bio">
+            {/* <div className="bio">
                 <BioEditor
                     bio={props.bio}
                     changeBio={(bio) => props.changeBio(bio)}
                     showBio={(bio) => props.showBio(bio)}
                 />
-            </div>
+            </div> */}
         </div>
     );
 }

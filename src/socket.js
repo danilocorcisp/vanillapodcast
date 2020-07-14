@@ -1,5 +1,5 @@
 import * as io from "socket.io-client";
-import { sendMessages, sendNewMessage } from "./actions";
+// import { sendMessages, sendNewMessage } from "./actions";
 
 export let socket;
 

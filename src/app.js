@@ -6,10 +6,10 @@ import Profile from "./profile";
 import Featured from "./Featured";
 
 import { BrowserRouter, Route } from "react-router-dom";
-import Find from "./find";
+// import Find from "./find";
 
-import Friends from "./friendship";
-import Chat from "./chat";
+// import Friends from "./friendship";
+// import Chat from "./chat";
 
 export default class App extends React.Component {
     constructor(props) {

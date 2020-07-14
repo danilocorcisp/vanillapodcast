@@ -7,7 +7,7 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import reduxPromise from "redux-promise";
 import { composeWithDevTools } from "redux-devtools-extension";
-import reducer from "./reducer_";
+// import reducer from "./reducer_";
 import { podcastReducer } from "./reducer";
 import * as io from "socket.io-client";
 import { init } from "./socket";
