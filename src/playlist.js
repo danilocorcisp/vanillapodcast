@@ -115,7 +115,7 @@ class Playlist extends Component {
             <div>
                 <div
                     style={{ paddingTop: 64 }}
-                    className="hero-header bg-shop animated fadeindown"
+                    className="hero-header bg-pod animated fadeindown"
                 >
                     <div className="p-20 animated fadeinup delay-1">
                         <div
