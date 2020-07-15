@@ -14,13 +14,13 @@ export default function Profile(props) {
                     image={props.image}
                     toggleModal={() => props.toggleModal()}
                 />
-                {/* {props.uploaderIsVisible && (
-                <Uploader
-                    updatePic={(image) => props.updatePic(image)}
-                    toggleModal={() => props.toggleModal()}
-                    // image={props.state.image}
-                />
-            )} */}
+                {props.uploaderIsVisible && (
+                    <Uploader
+                        updatePic={(image) => props.updatePic(image)}
+                        toggleModal={() => props.toggleModal()}
+                        image={props.state.image}
+                    />
+                )}
             </div>
 
             {/* <div className="bio">

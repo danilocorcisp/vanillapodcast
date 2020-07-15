@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "./axios";
+import Logo from "./logo";
 import { Link } from "react-router-dom";
 
 class Registration extends React.Component {
@@ -39,13 +40,19 @@ class Registration extends React.Component {
         return (
             <>
                 <div className="main animated fadein">
+                    <div>
+                        <Logo />
+                    </div>
                     <div className="fullscreen bg-4 valign-wrapper animated fadeinright">
                         <div className="opacity-overlay"></div>
                         <div className="valign center-align w-100">
                             <h1 className="m-0 white-text">
-                                <strong>OVRCast</strong>
+                                <strong>
+                                    REGISTER TO BE PART OF THIS PODCAST
+                                    COMMUNITY
+                                </strong>
                             </h1>
-                            <h5 className="white-text">Register</h5>
+                            <h5 className="white-text">Fill the form</h5>
                             <div className="p-20">
                                 <div className="input-field with-bg center">
                                     <input
@@ -81,6 +88,7 @@ class Registration extends React.Component {
                                         onChange={(e) => this.handleChange(e)}
                                     />
                                 </div>
+                                <br></br>
                                 <span className="focus-input"></span>
                                 <div className="container-login-form-btn">
                                     <button

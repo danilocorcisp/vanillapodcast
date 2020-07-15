@@ -4,7 +4,7 @@ import axios from "./axios";
 import Uploader from "./uploader";
 import Profile from "./profile";
 import Featured from "./Featured";
-
+import Footer from "./footer";
 import { BrowserRouter, Route } from "react-router-dom";
 // import Find from "./find";
 
@@ -59,66 +59,36 @@ export default class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <div className="app-container">
-                    <div className="header">
-                        {/* <Logo /> */}
-                        {/* <div className="signed">
-                            Signed in as: {this.state.first} {this.state.last}
-                        </div> */}
-                        <div className="profpic">
-                            {/* <ProfilePic
+                <div className="hero-header profile">
+                    <Route
+                        exact
+                        path="/"
+                        render={() => (
+                            <Profile
                                 first={this.state.first}
                                 last={this.state.last}
                                 image={this.state.image}
+                                uploaderIsVisible={this.state.uploaderIsVisible}
                                 toggleModal={() => this.toggleModal()}
-                            /> */}
-                        </div>
-                    </div>
-
-                    <div className="app">
-                        <Route
-                            exact
-                            path="/"
-                            render={() => (
-                                <Profile
-                                    first={this.state.first}
-                                    last={this.state.last}
-                                    image={this.state.image}
-                                    uploaderIsVisible={
-                                        this.state.uploaderIsVisible
-                                    }
-                                    toggleModal={() => this.toggleModal()}
-                                    updatePic={(image) => this.updatePic(image)}
-                                    // showBio={(bio) => this.showBio(bio)}
-                                />
-                            )}
-                        />
-
-                        {/* <Route
-                            path="/user/:id"
-                            render={(props) => (
-                                <OtherProfile
-                                    key={props.match.url}
-                                    match={props.match}
-                                    history={props.history}
-                                />
-                            )}
-                        /> */}
-
-                        <Route path="/featured" render={() => <Featured />} />
-
-                        {this.state.uploaderIsVisible && (
-                            <Uploader
                                 updatePic={(image) => this.updatePic(image)}
-                                toggleModal={() => this.toggleModal()}
-                                image={this.state.image}
                             />
                         )}
-                    </div>
-                    <footer>
-                        <Nav />
-                    </footer>
+                    />
+
+                    <Route path="/featured" render={() => <Featured />} />
+
+                    {this.state.uploaderIsVisible && (
+                        <Uploader
+                            updatePic={(image) => this.updatePic(image)}
+                            toggleModal={() => this.toggleModal()}
+                            image={this.state.image}
+                        />
+                    )}
                 </div>
+                <footer>
+                    <Footer />
+                    <Nav />
+                </footer>
             </BrowserRouter>
         );
     }

@@ -3,6 +3,7 @@ import Search from "./search";
 import APIClient from "./APIClient";
 import { connect } from "react-redux";
 import actions from "./actions";
+
 import APlayer from "aplayer";
 
 class Playlist extends Component {
@@ -28,7 +29,7 @@ class Playlist extends Component {
         }
 
         var ap1 = new APlayer({
-            element: document.getElementById("aplayer"),
+            element: document.getElementById("player1"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -119,7 +120,7 @@ class Playlist extends Component {
                     className="hero-header bg-shop animated fadeindown"
                 >
                     <div className="p-20 animated fadeinup delay-1">
-                        <div id="aplayer" className="aplayer"></div>
+                        <div id="player1" classList="aplayer"></div>
                     </div>
                 </div>
 
