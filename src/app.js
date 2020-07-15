@@ -87,6 +87,7 @@ export default class App extends React.Component {
                 </div>
                 <footer>
                     <Footer />
+                    <Nav />
                 </footer>
             </BrowserRouter>
         );
