@@ -42,6 +42,6 @@ if (!userIsLoggedIn) {
 
 //fim
 
-ReactDOM.render(elem, document.querySelector("main"));
+ReactDOM.render(elem, document.getElementById("root"));
 
 //fim n

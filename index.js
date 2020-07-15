@@ -1,9 +1,7 @@
 const express = require("express");
 const app = express();
 const server = require("http").Server(app);
-const io = require("socket.io")(server, {
-    origins: "localhost:8080 127.0.0.1:8080",
-});
+const io = require("socket.io").listen(server);
 const compression = require("compression");
 const cookieSession = require("cookie-session");
 const db = require("./db");
@@ -300,7 +298,12 @@ app.get("/feed", function (req, res, next) {
                 return;
             }
 
-            let xml = response.text;
+            let xml;
+            if (response.text) {
+                xml = response.text;
+            } else {
+                xml = response.body;
+            }
             console.log("xml", xml);
 
             xml2js.parseString(xml, function (err, result) {

@@ -67,6 +67,7 @@ class Playlist extends Component {
         if (this.props.podcasts.selected == null) return;
 
         const feedUrl = this.props.podcasts.selected["feedUrl"];
+        console.log("Playlist -> PARA O CLICK -> feedUrl", feedUrl);
         if (feedUrl == null) return;
 
         if (this.props.podcasts.trackList != null) {
@@ -118,7 +119,10 @@ class Playlist extends Component {
                     className="hero-header bg-pod animated fadeindown"
                 >
                     <div className="p-20 animated fadeinup delay-1">
-                        <div id="player1" className="aplayer"></div>
+                        <div
+                            id="player1"
+                            className="aplayer aplayer-list"
+                        ></div>
                     </div>
                 </div>
 
