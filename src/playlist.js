@@ -28,7 +28,7 @@ class Playlist extends Component {
         }
 
         var ap1 = new APlayer({
-            element: document.getElementById("player1"),
+            element: document.getElementById("aplayer"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -116,13 +116,10 @@ class Playlist extends Component {
             <div>
                 <div
                     style={{ paddingTop: 64 }}
-                    className="hero-header bg-pod animated fadeindown"
+                    className="hero-header bg-shop animated fadeindown"
                 >
                     <div className="p-20 animated fadeinup delay-1">
-                        <div
-                            id="player1"
-                            className="aplayer aplayer-list"
-                        ></div>
+                        <div id="aplayer" className="aplayer"></div>
                     </div>
                 </div>
 

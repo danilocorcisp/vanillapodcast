@@ -84,7 +84,6 @@ export default class App extends React.Component {
                                     first={this.state.first}
                                     last={this.state.last}
                                     image={this.state.image}
-                                    bio={this.state.bio}
                                     uploaderIsVisible={
                                         this.state.uploaderIsVisible
                                     }
