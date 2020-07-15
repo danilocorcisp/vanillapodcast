@@ -28,8 +28,8 @@ class Playlist extends Component {
             sublist = Object.assign([], list);
         }
 
-        var ap1 = new APlayer({
-            element: document.getElementById("player1"),
+        let ap1 = new APlayer({
+            element: document.getElementById("player2"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -120,7 +120,10 @@ class Playlist extends Component {
                     className="hero-header bg-shop animated fadeindown"
                 >
                     <div className="p-20 animated fadeinup delay-1">
-                        <div id="player1" className="aplayer"></div>
+                        <div
+                            id="player2"
+                            className="aplayer aplayer-withlist aplayer-mobile"
+                        ></div>
                     </div>
                 </div>
 

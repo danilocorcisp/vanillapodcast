@@ -12,6 +12,7 @@ class Featured extends Component {
 
                     <div className="animated fadeinup delay-1">
                         <Podcasts />
+                        <div className="clr"></div>
                     </div>
                 </div>
 
