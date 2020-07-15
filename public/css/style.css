@@ -260,7 +260,7 @@ video.responsive-video {
 }
 
 .bg-4 {
-    background-color: #a94442;
+    background-color: #ff1616;
 }
 .bg-5 {
     background: url(../img/5.jpg) no-repeat center / cover;
@@ -665,6 +665,7 @@ nav ul li {
     align-items: center;
     padding: 10px;
     font-size: 12px;
+    color: white
 }
 
 .container-login-form-btn {
@@ -742,7 +743,8 @@ nav ul li {
     line-height: 1.2;
 }
 .profile {
-    align-items: right;
+    margin-left: 60px;
+    color: white;
 }
 .profile img {
     align-self: right;

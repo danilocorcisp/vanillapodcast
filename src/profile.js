@@ -6,10 +6,10 @@ import ProfilePic from "./profile-pic";
 export default function Profile(props) {
     return (
         <div className="profile">
-            <h1>
-                Hi there {props.first} {props.last}
-            </h1>
             <div className="bigpic">
+                <h1>
+                    Hi there {props.first} {props.last}
+                </h1>
                 <ProfilePic
                     image={props.image}
                     toggleModal={() => props.toggleModal()}

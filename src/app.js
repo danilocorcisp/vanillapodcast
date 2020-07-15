@@ -59,7 +59,7 @@ export default class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <div className="hero-header profile">
+                <div className="profile">
                     <Route
                         exact
                         path="/"
