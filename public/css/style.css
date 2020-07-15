@@ -273,7 +273,7 @@ video.responsive-video {
     background: url(../img/blur.jpg) no-repeat center / cover;
 }
 .bg-shop {
-    background: url(../img/shop.jpg) no-repeat center / cover;
+    background: url(../img/oie.jpg) no-repeat center / cover;
 }
 
 .opacity-overlay {
@@ -640,8 +640,15 @@ nav ul li {
 }
 ::placeholder {
     color: black;
-    font-style: 14px;
+    font-style: 16px;
     font-weight: 600;
+}
+.bigpic h1 {
+    color: white;
+}
+
+.bigpic h5 {
+    color: white;
 }
 
 .bigpic img {
@@ -665,7 +672,7 @@ nav ul li {
     align-items: center;
     padding: 10px;
     font-size: 12px;
-    color: white
+    color: white;
 }
 
 .container-login-form-btn {
@@ -744,10 +751,12 @@ nav ul li {
 }
 .profile {
     margin-left: 60px;
-    color: white;
+    background-color: black;
 }
+
 .profile img {
     align-self: right;
+    z-index: -5;
 }
 .main {
     background-color: #fff;

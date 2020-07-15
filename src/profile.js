@@ -10,6 +10,7 @@ export default function Profile(props) {
                 <h1>
                     Hi there {props.first} {props.last}
                 </h1>
+                <h5>Here you can find all your favourites podcasts!</h5>
                 <ProfilePic
                     image={props.image}
                     toggleModal={() => props.toggleModal()}

@@ -120,7 +120,7 @@ class Playlist extends Component {
                     className="hero-header bg-shop animated fadeindown"
                 >
                     <div className="p-20 animated fadeinup delay-1">
-                        <div id="player1" classList="aplayer"></div>
+                        <div id="player1" className="aplayer"></div>
                     </div>
                 </div>
 
