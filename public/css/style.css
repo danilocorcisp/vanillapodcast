@@ -751,7 +751,7 @@ nav ul li {
 }
 .profile {
     margin-left: 60px;
-    background-color: rgb(247, 119, 119);
+    background-color: #d40808;
 }
 
 .profile img {
@@ -3218,13 +3218,13 @@ ul.faq {
 
 .modal {
     width: 50%;
-    max-width: 30em;
-    height: 15em;
+    max-width: 26em;
+    height: 10em;
     position: fixed;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: whitesmoke;
+    background-color: #f75858;
     padding: 1em;
     display: flex;
     flex-direction: column;
