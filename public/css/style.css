@@ -751,7 +751,7 @@ nav ul li {
 }
 .profile {
     margin-left: 60px;
-    background-color: black;
+    background-color: rgb(247, 119, 119);
 }
 
 .profile img {
@@ -3204,4 +3204,62 @@ ul.faq {
         -webkit-transform: rotate(1turn);
         transform: rotate(1turn);
     }
+}
+
+.uploader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #e7b5f780;
+}
+
+.modal {
+    width: 50%;
+    max-width: 30em;
+    height: 15em;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    height: 2.25em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.667em;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.uploader label {
+    color: black;
+    height: 80px;
+    width: 100px;
+    background-color: #ff1616;
+    position: absolute;
+    margin: auto;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    top: 50px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    cursor: pointer;
 }

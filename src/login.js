@@ -54,6 +54,8 @@ class Login extends Component {
                                 <input
                                     className="rounded validate"
                                     id="login"
+                                    required
+                                    name="email"
                                     type="email"
                                     onChange={(e) => this.handleChange(e)}
                                 ></input>
@@ -63,11 +65,14 @@ class Login extends Component {
                                 <input
                                     className="rounded validate"
                                     id="login-psw"
+                                    required
+                                    name="password"
                                     type="password"
                                     onChange={(e) => this.handleChange(e)}
                                 ></input>
                                 <label htmlFor="login-psw">Password</label>
                             </div>
+                            <br></br>
                             <span className="focus-input"></span>
                             <div className="container-login-form-btn">
                                 <button

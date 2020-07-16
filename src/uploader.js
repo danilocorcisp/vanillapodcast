@@ -42,7 +42,7 @@ class Uploader extends React.Component {
                             accept="image/*"
                             onChange={(e) => this.handleChange(e)}
                         />
-                        <label for="file">
+                        <label htmlFor="file">
                             <i className="material-icons">
                                 add_photo_alternate
                             </i>{" "}

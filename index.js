@@ -114,6 +114,7 @@ app.post("/login", (req, res) => {
             .then((data) => {
                 let userId = data.rows[0].id;
                 let firstName = data.rows[0].first;
+                console.log("login test: ", data.rows);
                 compare(req.body.password, data.rows[0].password).then(
                     (match) => {
                         if (match) {
