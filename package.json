@@ -20,7 +20,7 @@
         "@testing-library/react": "^8.0.1",
         "animejs": "^2.2.0",
         "aplayer": "^1.10.1",
-        "aws-sdk": "^2.497.0",
+        "aws-sdk": "^2.814.0",
         "axios": "^0.21.1",
         "babel-loader": "^8.0.5",
         "bcryptjs": "^2.4.3",
